@@ -52,6 +52,11 @@ const uint8_t HDR_LED_7     = LED8;
 \*-------------------------------------------------------------*/
 const uint8_t HDR_D_LED1_RGB = 0x58;
 const uint8_t HDR_D_LED2_RGB = 0x59;
+/*-------------------------------------------------------------*\
+| 0x91 & 0x92 found on the new 048D:5711 controller chip        |
+\*-------------------------------------------------------------*/
+const uint8_t HDR_D_LED3_RGB = 0x91;
+const uint8_t HDR_D_LED4_RGB = 0x92;
 
 enum EffectType
 {

@@ -21,9 +21,9 @@
 \*-------------------------------------------------*/
 static FwdLedHeaders LedLookup
 {
-    {"LED1",   0x20}, {"LED2",   0x21}, {"LED3", 0x22}, {"LED4", 0x23},
-    {"LED5",   0x24}, {"LED6",   0x25}, {"LED7", 0x26}, {"LED8", 0x27},
-    {"D_LED1", 0x58}, {"D_LED2", 0x59},
+    {"LED1",   0x20}, {"LED2",   0x21}, {"LED3", 0x22},     {"LED4", 0x23},
+    {"LED5",   0x24}, {"LED6",   0x25}, {"LED7", 0x26},     {"LED8", 0x27},
+    {"D_LED1", 0x58}, {"D_LED2", 0x59}, {"D_ZONE1", 0x58},  {"D_ZONE2", 0x59},
 };
 
 /*-------------------------------------------------*\
@@ -42,6 +42,8 @@ static MBName MBName2LayoutLookup
     {"X570 AORUS PRO WIFI",         "STD_ATX"   },
     {"X570 AORUS ULTRA",            "STD_ATX"   },
     {"X570 I AORUS PRO WIFI",       "ITX"       },
+    {"B650E AORUS STEALTH ICE",     "V3_ATX"    },
+    {"B850 AORUS ELITE WIFI ICE",   "V3_ATX"    },
     {"X670E AORUS MASTER",          "MSTR_ATX_2"},
     {"Z390 AORUS MASTER-CF",        "MSTR_ATX"  },
 };
@@ -229,6 +231,31 @@ static KnownLayout knownLayoutsLookup
             },
             {
                 "ARGB Strip",
+                {
+                    { "LED C1/C2",  LED5, 1},
+                }
+            },
+            {
+                "Motherboard",
+                {
+                    { "Aorus Logo", LED7, 1},
+                    { "ESS Logo",   LED4, 1},
+                }
+            }
+        }
+    },
+    {
+        "V3_ATX",
+        {
+            {
+                "Digital Headers",
+                {
+                    { "D_LED1 / D_LED2", HDR_D_LED1, 0},
+                    { "D_ZONE1 / D_ZONE2", HDR_D_LED1, 0},
+                }
+            },
+            {
+                "RGB Strip",
                 {
                     { "LED C1/C2",  LED5, 1},
                 }
